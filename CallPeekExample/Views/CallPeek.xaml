@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="CallPeekExample.Views.CallPeek"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CallPeekExample.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.Row="0" Grid.Column="0"  Background="#121212">
+            <Border x:Name="marquisImage" Background="Red" Canvas.Left="-30" Canvas.Top="2" Width="60" Height="60" CornerRadius="40">
+                <TextBlock Padding="12">Image</TextBlock>
+            </Border>
+
+        </Canvas>
+        <StackPanel x:Name="needsAGoodNamePanel" Grid.Row="0"  Grid.Column="1" Grid.ColumnSpan="2" Background="#121212" Orientation="Vertical">
+            <!-- #region -->
+            <local:CallPeekToolbar></local:CallPeekToolbar>
+            <local:CallPeekToolbar></local:CallPeekToolbar>
+            <local:CallPeekToolbar></local:CallPeekToolbar>
+            <!-- #endregion -->
+        </StackPanel>
+
+        <StackPanel x:Name="leftPanel" Grid.Row="1" Grid.Column="0" Background="Orange" VerticalAlignment="Center">
+            <TextBlock Foreground="Green">&lt; Left</TextBlock>
+        </StackPanel>
+
+        <StackPanel x:Name="contentPanel" Grid.Row="1" Grid.Column="1" Background="LightBlue">
+            <Border Padding="10">
+                <StackPanel>
+                    <TextBlock>Blah</TextBlock>
+                    <TextBlock>Blah</TextBlock>
+                </StackPanel>
+            </Border>
+
+
+        </StackPanel>
+
+        <Canvas Grid.Row="1" Grid.Column="2" Background="Yellow">
+            <Button x:Name="closeButton" Canvas.Right="5" Canvas.Top="5">X</Button>
+        </Canvas>
+
+
+
+    </Grid>
+</UserControl>
